@@ -7,9 +7,8 @@ class Students:
         self.grade1 = grade1
         self.grade2 = grade2
 
-    def accept(
-        self,
-    ):  # accepting the students by appending info to the list for later access
+    # accepting the students by appending info to the list for later access
+    def accept(self):
         Students.students.append(
             {
                 "name": self.name,
@@ -20,7 +19,7 @@ class Students:
         )
 
     # instance method that loops through the list and prints out a formatted data
-    def display(self):  # works fine
+    def display(self):
         for student in Students.students:
             if student["id"] == self.id:
                 print(f"Name: {self.name}")
@@ -32,7 +31,7 @@ class Students:
     # class method that will search all instances of the class using a student id
     # then will loop the list using that id and printing out formatted data
     @classmethod
-    def search(cls, id):  # so far so great, works fine
+    def search(cls, id):
         for student in Students.students:
             if student["id"] == id:
                 for key, value in student.items():
